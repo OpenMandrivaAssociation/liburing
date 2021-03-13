@@ -39,7 +39,7 @@ for the Linux-native io_uring.
 %prep
 %autosetup -p1
 
-%build
+
 %set_build_flags
 ./configure --prefix=%{_prefix} --libdir=/%{_libdir} --libdevdir=/%{_libdir} --mandir=%{_mandir} --includedir=%{_includedir}
 
@@ -59,3 +59,4 @@ for the Linux-native io_uring.
 %{_libdir}/liburing.a
 %{_libdir}/pkgconfig/*
 %{_mandir}/man2/*
+%{_mandir}/man3/io_uring

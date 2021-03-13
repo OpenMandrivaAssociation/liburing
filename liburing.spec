@@ -59,4 +59,4 @@ for the Linux-native io_uring.
 %{_libdir}/liburing.a
 %{_libdir}/pkgconfig/*
 %{_mandir}/man2/*
-%{_mandir}/man3/io_uring
+%{_mandir}/man3/io_uring*

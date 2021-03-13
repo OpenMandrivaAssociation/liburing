@@ -1,4 +1,4 @@
-%global major   1
+%global major   2
 %define libname %mklibname uring %major
 %define devname %mklibname uring -d
 

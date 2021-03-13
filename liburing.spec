@@ -3,7 +3,7 @@
 %define devname %mklibname uring -d
 
 Name: liburing
-Version: 1.0.7
+Version: 2.0
 Release: 1
 Summary: Linux-native io_uring I/O access library
 Group: System/Libraries

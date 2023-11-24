@@ -50,6 +50,7 @@ for the Linux-native io_uring.
 
 %files -n %{libname}
 %attr(0755,root,root) %{_libdir}/liburing.so.%{major}{,.*}
+%{_libdir}/liburing-ffi.so.%{major}{,.*}
 %license COPYING
 
 %files -n %{devname}
@@ -57,5 +58,7 @@ for the Linux-native io_uring.
 %{_includedir}/liburing.h
 %{_libdir}/liburing.so
 %{_libdir}/liburing.a
+%{_libdir}/liburing-ffi.a
+%{_libdir}/liburing-ffi.so
 %{_libdir}/pkgconfig/*
 %doc %{_mandir}/man*/*

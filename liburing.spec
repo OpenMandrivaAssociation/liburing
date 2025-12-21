@@ -13,6 +13,11 @@ License: (GPLv2 with exceptions and LGPLv2+) or MIT
 Source0: https://brick.kernel.dk/snaps/%{name}-%{version}.tar.bz2
 URL: https://git.kernel.dk/cgit/liburing
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 %description
 Provides native async IO for the Linux kernel, in a fast and efficient
 manner, for both buffered and O_DIRECT.

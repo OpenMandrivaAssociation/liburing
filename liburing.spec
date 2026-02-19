@@ -5,17 +5,16 @@
 %define devname %mklibname uring -d
 
 Name: liburing
-Version: 2.8
+Version: 2.14
 Release: 1
 Summary: Linux-native io_uring I/O access library
 Group: System/Libraries
 License: (GPLv2 with exceptions and LGPLv2+) or MIT
-Source0: https://brick.kernel.dk/snaps/%{name}-%{version}.tar.bz2
-URL: https://git.kernel.dk/cgit/liburing
+Source0: https://github.com/axboe/liburing/archive/refs/tags/liburing-%{version}.tar.gz
+URL: https://github.com/axboe/liburing
 
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libtool-base
 BuildRequires:	slibtool
 BuildRequires:	make
 %description
@@ -41,12 +40,20 @@ This package provides header files to include and libraries to link with
 for the Linux-native io_uring.
 
 %prep
-%autosetup -p1
+%autosetup -p1 -n %{name}-%{name}-%{version}
 
 %build
 %set_build_flags
-# (tpg) don't use macro here
-./configure --prefix=%{_prefix} --libdir=/%{_libdir} --libdevdir=/%{_libdir} --mandir=%{_mandir} --includedir=%{_includedir} --cc=%{__cc} --cxx=%{__cxx}
+# Looks like autoconf, but isn't
+./configure \
+	--prefix=%{_prefix} \
+	--libdir=%{_libdir} \
+	--libdevdir=%{_libdir} \
+	--mandir=%{_mandir} \
+	--includedir=%{_includedir} \
+	--use-libc \
+	--cc="%{__cc}" \
+	--cxx="%{__cxx}"
 
 %make_build
 

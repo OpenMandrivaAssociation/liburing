@@ -5,7 +5,7 @@
 %define devname %mklibname uring -d
 
 Name: liburing
-Version: 2.14
+Version: 2.15
 Release: 1
 Summary: Linux-native io_uring I/O access library
 Group: System/Libraries
@@ -40,7 +40,7 @@ This package provides header files to include and libraries to link with
 for the Linux-native io_uring.
 
 %prep
-%autosetup -p1 -n %{name}-%{name}-%{version}
+%autosetup -p1 -n liburing-liburing-2.15
 
 %build
 %set_build_flags
